@@ -119,7 +119,7 @@ static PyObject *usbrelay_board_details(PyObject *self, PyObject *args)
     int i;
     for (i = 0; i < board_count; i++)
     {
-        boards[i] = Py_BuildValue("(sii)", relay_boards[i].serial, relay_boards[i].relay_count, relay_boards[i].state);
+        boards[i] = Py_BuildValue("(sii)", "serial", relay_boards[i].relay_count, relay_boards[i].state);
     }
 
     //This is not the ideal way to do this, but hand-brewing a va_list is generally considered "bad" and not portable

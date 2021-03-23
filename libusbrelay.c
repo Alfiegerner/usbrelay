@@ -280,6 +280,8 @@ relay_board *find_board(const char *serial,int debug )
 			if (strcmp(relay_boards[i].path, respath) == 0)
 				isdevice = 1;
 		}
+                isdevice = 1;
+		return &relay_boards[i];
 
 		if ((strcmp(relay_boards[i].serial, serial) == 0) || (strcmp(relay_boards[i].path, serial) == 0)  || isdevice) {
 			if(debug) fprintf(stderr,"find_board(%s) path %s\n",serial,relay_boards[i].path);
